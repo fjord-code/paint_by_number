@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=3 uid="uid://cx3fipdwssga2"]
+
+[ext_resource type="PackedScene" uid="uid://dwj583ji02by3" path="res://Scenes/PixelArtScenes/PixelCell.tscn" id="1_yv678"]
+[ext_resource type="Script" path="res://Scenes/PixelArtScenes/PixelCells.gd" id="2_hxy58"]
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_jlxq5"]
+resource_name = "PixelCellsCollection"
+scenes/1/scene = ExtResource("1_yv678")
+
+[sub_resource type="TileSet" id="TileSet_ehy7m"]
+tile_size = Vector2i(64, 64)
+sources/0 = SubResource("TileSetScenesCollectionSource_jlxq5")
+
+[node name="PixelCells" type="TileMap"]
+tile_set = SubResource("TileSet_ehy7m")
+format = 2
+script = ExtResource("2_hxy58")
+accent_color = Color(0.843137, 0.843137, 0, 1)

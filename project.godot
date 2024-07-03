@@ -1,0 +1,51 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="Paint By Number"
+config/version="1.0.0.0"
+run/main_scene="res://Scenes/PixelArtPainter.tscn"
+config/features=PackedStringArray("4.2", "GL Compatibility")
+boot_splash/bg_color=Color(0.646029, 0.646029, 0.646029, 1)
+boot_splash/show_image=false
+boot_splash/use_filter=false
+config/icon="res://icon.svg"
+
+[autoload]
+
+EventBus="*res://Scripts/EventBus.gd"
+Enums="*res://Scripts/Enums.gd"
+Scenario="*res://Scripts/Scenario.gd"
+
+[display]
+
+window/size/viewport_width=432
+window/size/viewport_height=768
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
+window/handheld/orientation=1
+
+[editor]
+
+movie_writer/movie_file="D:/godot/projects/PaintByNumber/Movies/paint_by_number.avi"
+
+[input_devices]
+
+pointing/emulate_touch_from_mouse=true
+pointing/android/enable_pan_and_scale_gestures=true
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
+textures/vram_compression/import_etc2_astc=true
+environment/defaults/default_clear_color=Color(0.956863, 0.909804, 0.839216, 1)

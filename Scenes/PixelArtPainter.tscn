@@ -1,0 +1,24 @@
+[gd_scene load_steps=7 format=3 uid="uid://qf8uxiwjpxt6"]
+
+[ext_resource type="Script" path="res://Scenes/PixelArtPainter.gd" id="1_4we88"]
+[ext_resource type="Script" path="res://Scenes/PixelArtScenes/PixelArtSprite2D.gd" id="2_6a7xd"]
+[ext_resource type="Script" path="res://Scenes/PixelArtScenes/TouchCamera2D.gd" id="3_hj7fr"]
+[ext_resource type="Texture2D" uid="uid://bqsbb44cwicxb" path="res://Assets/Images/gift_01a.png" id="4_36k24"]
+[ext_resource type="PackedScene" uid="uid://6gmxguf4watx" path="res://Scenes/PixelArtScenes/ColorSelectionMenu.tscn" id="4_xwl41"]
+[ext_resource type="PackedScene" uid="uid://cx3fipdwssga2" path="res://Scenes/PixelArtScenes/PixelCells.tscn" id="5_chgj3"]
+
+[node name="PixelArtPainter" type="Node2D"]
+script = ExtResource("1_4we88")
+
+[node name="TouchCamera2D" type="Camera2D" parent="."]
+script = ExtResource("3_hj7fr")
+
+[node name="ColorSelectionMenu" parent="." instance=ExtResource("4_xwl41")]
+
+[node name="PixelArtSprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("4_36k24")
+centered = false
+script = ExtResource("2_6a7xd")
+
+[node name="PixelCells" parent="PixelArtSprite2D" instance=ExtResource("5_chgj3")]
+scale = Vector2(0.016, 0.016)

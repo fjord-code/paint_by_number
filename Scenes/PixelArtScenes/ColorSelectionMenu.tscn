@@ -1,0 +1,50 @@
+[gd_scene load_steps=3 format=3 uid="uid://6gmxguf4watx"]
+
+[ext_resource type="PackedScene" uid="uid://cvxs8k8gw7pg5" path="res://Scenes/PixelArtScenes/LabeledColorRect.tscn" id="1_bhil2"]
+[ext_resource type="Script" path="res://Scenes/PixelArtScenes/ColorSelectionMenu.gd" id="1_nve0r"]
+
+[node name="ColorSelectionMenu" type="CanvasLayer"]
+script = ExtResource("1_nve0r")
+labeled_color_rect_scene = ExtResource("1_bhil2")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+custom_minimum_size = Vector2(0, 128)
+anchors_preset = -1
+anchor_top = 0.815
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 134.08
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 0
+mouse_force_pass_scroll_events = false
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer/MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="TopHBoxContainer" type="HBoxContainer" parent="ScrollContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+alignment = 1
+
+[node name="BottomHBoxContainer" type="HBoxContainer" parent="ScrollContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+alignment = 1
